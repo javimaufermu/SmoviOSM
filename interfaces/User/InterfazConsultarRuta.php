@@ -30,8 +30,9 @@ $mysqli = new mysqli($host, $user, $pw, $db);
           <div class="Contenido">
 
           <form action="VerRuta.php" method="POST">
-              <label style="font-size:1.9rem;">Seleccione una ruta:</label>
-              <select name="ID_Ruta" style="font-size:1.9rem;">
+          <div class="BarraSelecRuta">   
+              <label class="lblText">Seleccione una ruta:</label>
+              <select name="ID_Ruta" class="optText">
               <?php
               $sql1 = "SELECT * from ruta";
               $result1 = $mysqli->query($sql1);
@@ -49,7 +50,7 @@ $mysqli = new mysqli($host, $user, $pw, $db);
               ?>
                                         
               </select>   
-              <div class="BarraBotonMod">                  
+                             
               <input type="hidden" name="enviado" value="S1">  
               <input type="submit" class="btn_form" value="Buscar">
               </div>
