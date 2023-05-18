@@ -59,7 +59,7 @@ body{
 	margin-top: 8 px;
 }
 
-.Nav {
+/*.Nav {
 	float: left;
 	min-height: 100vh;
 	min-width: 280px;
@@ -67,7 +67,74 @@ body{
 	background-color: #000000;
 	border-right: #000000 2px solid;
 	box-shadow: 0px 71px 30px 10px rgba(0,0,0,.6), 0 7px 10px -5px rgba(80,80,80,.4);
+}*/
+
+.Nav{
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 90px;
+	background: #11101D;
+	padding: 6px 14px;
+	z-index: 99;
+	transition: all 0.5s ease;
+	float: left;  
+  	background-color: #000000;
+  	border-right: #000000 2px solid;
+  	box-shadow: 0px 71px 30px 10px rgba(0,0,0,.6), 0 7px 10px -5px rgba(80,80,80,.4);  
+  }
+.Nav.open{
+	width: 286px;
 }
+.Nav .Logo{
+	height: 60px;
+	display: flex;
+	align-items: center;
+	position: relative;	
+	color: #ffffff;
+	border-bottom: #fff 1px solid;
+	padding: 0px 10px;
+	margin: 5px 10px;
+	justify-content: center;
+}
+.Nav .Logo .icon{
+	font-size: 40px;	
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+
+.Nav .Logo .logo_name{
+	font-size: 1.9em;
+	margin: 0px 20px;
+	padding: 11px;
+	text-align: center;	
+	color: #fff;	
+	font-weight: 600;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+.Nav.open .Logo .icon,
+.Nav.open .Logo .logo_name{
+	opacity: 1;
+}
+.Nav .Logo #btnM{
+	position: absolute;
+	top: 50%;	
+	transform: translateY(-50%);
+	font-size: 22px;
+	transition: all 0.4s ease;
+	font-size: 23px;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+.Nav.open .Logo #btnM{
+	text-align: right;
+	right: 0;
+}
+
+
 .FondoNav img{
 	height: 100vh;
 	width: 287px;
@@ -78,34 +145,53 @@ body{
 
 .Section {
 	background-color: #eeeeee;
-	height: 100vh;
-	margin-left: 288px;
+	height: 100vh;	
 	overflow: auto;
+	margin-left: 90px;
+  width: calc(100% - 90px);
+  transition: all 0.5s ease;
+  z-index: 2;
 }
 
-.Logo p{
-	font-size: 1.9em;
-	margin: 0px 20px;
-	padding: 11px;
-	text-align: center;
-	color: #ffffff;
-	border-bottom: #fff 1px solid;
-}
-
+.Nav.open ~ .Section{
+	margin-left: 286px;
+	width: calc(100% - 286px);
+  }
+  
 .BarraNavegacion{
 	padding-top: 20px;
-	position: absolute;
+	
 }
 
 .BarraNavegacion button {
 	display: block;
-	border-radius: 8px;
-	/*background-color: blue; //Cambia el color cuando se selecciona*/
-	padding: 0px 10px;
-	margin: 5px 10px;
+	border-radius: 8px;	
+	margin: 5px 0px;	
+	text-align: left;
+}
+
+.Nav.open .BarraNavegacion button {
+	display: block;
+	border-radius: 8px;	
+	margin: 5px 0px;
 	width: 260px;
 	text-align: left;
 }
+
+.Nav .BarraNavegacion button > span{
+	color: #fff;
+	font-size: 15px;
+	font-weight: 400;
+	white-space: nowrap;
+	opacity: 0;
+	pointer-events: none;
+	transition: 0.4s;
+  }
+  .Nav.open .BarraNavegacion button > span{
+	opacity: 1;
+	pointer-events: auto;
+  }
+
 
 .btn {
 	width: 100%;
@@ -121,12 +207,12 @@ body{
 
 .btn > i{
 	font-size: 30px;
-	width: 30px;
-	/*color: #ffffff;*/
+	width: 30px;	
 }
 
 .btn > span {
 	padding-left: 7px;
+	vertical-align: text-top;
 }
 
 .btn:hover {

@@ -168,11 +168,9 @@ $mysqli = new mysqli($host, $user, $pw, $db);
       coord[0] = Number(data[i]);
       coord[1] = Number(data[i + 1]);
       latlngs[k] = coord;
-      k = k + 1;
-      console.log(coord);
+      k = k + 1;      
 
-    }
-    console.log(latlngs);
+    }    
     var polygon = L.polygon(latlngs, {
       fillOpacity: 0,
       color: 'blue'
