@@ -180,7 +180,7 @@ body{
 
 .Nav .BarraNavegacion button > span{
 	color: #fff;
-	font-size: 15px;
+	font-size: 0px;
 	font-weight: 400;
 	white-space: nowrap;
 	opacity: 0;
@@ -190,6 +190,7 @@ body{
   .Nav.open .BarraNavegacion button > span{
 	opacity: 1;
 	pointer-events: auto;
+	font-size: 17px;
   }
 
 

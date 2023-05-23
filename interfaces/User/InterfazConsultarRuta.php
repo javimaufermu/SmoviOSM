@@ -154,12 +154,13 @@ $mysqli = new mysqli($host, $user, $pw, $db);
   </section>
 
   <script>
+    <?php if ((isset($_POST["enviado"]))) {?>
     document.getElementById('caja').innerHTML = "<div id='map' style='width: 100%; height: 100%;'></div>";
     var mymap = L.map('map').setView([2.441852, -76.606293], 14.5);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       maxZoom: 19,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    }).addTo(mymap);
+    }).addTo(mymap);    
     var data = <?php echo JSON_Encode($coordenadas); ?>;
     var latlngs = new Array();
     var k = 0;
@@ -175,6 +176,7 @@ $mysqli = new mysqli($host, $user, $pw, $db);
       fillOpacity: 0,
       color: 'blue'
     }).addTo(mymap);
+    <?php } ?>
   </script>  
 </body>
 

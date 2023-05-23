@@ -29,9 +29,23 @@
   let nav = document.querySelector(\".Nav\");
   let closeBtn = document.querySelector(\"#btnM\");  
 
+  if (!localStorage.getItem('openBar')) {
+    console.log(\"no variable\");
+    localStorage.setItem('openBar', 0);
+} else {
+    console.log(\"variable\");
+    var isOpen = localStorage.getItem('openBar');
+    console.log(\"isOpen:\"+isOpen);
+    if (isOpen ==\"1\") {        
+        nav.classList.toggle(\"open\");
+        menuBtnChange();
+    }    
+}
+
   closeBtn.addEventListener(\"click\", ()=>{
     nav.classList.toggle(\"open\");
-    menuBtnChange();//calling the function(optional)
+    menuBtnChange();
+    openChange(localStorage.getItem('openBar'));   
   });
     
   function menuBtnChange() {
@@ -43,6 +57,15 @@
      console.log(\"close\");
    }
   }
+  function openChange(isOpen) {
+    if (isOpen == \"0\") {
+        localStorage.setItem('openBar', 1);   
+        console.log(localStorage.getItem('openBar'))         
+    } else {
+        localStorage.setItem('openBar', 0); 
+        console.log(localStorage.getItem('openBar'))           
+    }
+}
   </script>
 
     <section class=\"Section\">
