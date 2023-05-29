@@ -13,14 +13,17 @@
           <button class=\"btn\" onclick=\"window.location.href='/SmoviRepo/interfaces/User/InterfazConsultarRuta.php'\">
             <i class=\"fas fa-bus\"></i>
             <span>Consultar ruta</span>
+            <div class=\"etiqueta\">Consultar ruta</div>
           </button>
           <button class=\"btn\" onclick=\"window.location.href='/SmoviRepo/interfaces/User/ParadaCercana.php'\">
             <i class=\"fas fa-torii-gate\"></i>
             <span>Paradas cercanas</span>
+            <div class=\"etiqueta\">Paradas cercanas</div>
           </button>
           <button class=\"btn\" onclick=\"window.location.href='/SmoviRepo/interfaces/User/RutaAlterna.php'\">
             <i class=\"fas fa-route\"></i>
             <span>Rutas alternativas</span>
+            <div class=\"etiqueta\">Rutas alternativas</div>
           </button>         
       </div> 
       </div> 

@@ -32,14 +32,17 @@ $mysqli = new mysqli($host, $user, $pw, $db);
             <button class="btn" onclick="window.location.href='#'">
                 <i class="fas fa-bus"></i>
                 <span>Consultar ruta</span>
+                <div class="etiqueta">Consultar ruta</div>
             </button>
             <button class="btn" onclick="window.location.href='#paradascercanas'">
                 <i class="fas fa-torii-gate"></i>
                 <span>Paradas cercanas</span>
+                <div class="etiqueta">Paradas cercanas</div>
             </button>
             <button class="btn" onclick="window.location.href='#rutasalternas'">
                 <i class="fas fa-route"></i>
                 <span>Rutas alternativas</span>
+                <div class="etiqueta">Rutas alternativas</div>
             </button>
         </div>
         </div>
